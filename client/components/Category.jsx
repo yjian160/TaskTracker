@@ -2,7 +2,7 @@ import React from 'react';
 import Task from './Task.jsx';
 
 let Category = () => (
-    <div style={{width: "200", border: '1px solid black', textAlign: 'center', padding: '5'}}>
+    <div style={{width: "200", border: '1px solid black', textAlign: 'center', padding: '5', margin: '10'}}>
         <div>
             <span style={{float: 'left'}}>
                 <button>{'<-'}</button>
