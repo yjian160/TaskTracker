@@ -4,11 +4,14 @@ import Category from './Category.jsx';
 let TaskTracker = (props) => {
     console.log(props);
     return (
-    <div style={{display: 'flex', flexDirection: 'row'}}>
-        <span><input type="text"></input><button>Add Category</button></span>
-        {props.categories.map(category => {
-            <Category />
-        })}
+    <div>
+        <div>
+            <input type="text" onChange={(e) => {props.updateCategoryInput(e.target.value)}}></input>
+            <button onClick={() => props.addCategory(props.categoryInput)}>Add Category</button>
+        </div>
+        <div style={{display: 'inline-flex', flexDirection: 'row'}}>
+            {props.categories.map(category => (<Category name={category} />))}
+        </div>
     </div>
 )}
 
