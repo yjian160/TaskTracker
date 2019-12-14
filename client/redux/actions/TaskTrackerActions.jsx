@@ -25,7 +25,8 @@ export const moveCategoryRight = (category) => ({
 
 export const addTask = (task) => ({
     type: 'ADD_TASK',
-    task: task,
+    task: task.task,
+    category: task.category
 });
 
 export const removeTask = (task) => ({

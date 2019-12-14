@@ -13,6 +13,9 @@ let Category = (props) => (
             </span>
         </div>
         <div><Task /></div>
+        <div>
+            <button>Add Task</button>
+        </div>
     </div>
 )
 

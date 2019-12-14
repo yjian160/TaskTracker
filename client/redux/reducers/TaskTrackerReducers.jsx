@@ -12,6 +12,12 @@ const TaskTrackerReducers = (state={categories: [], tasks: [], categoryInput: ''
             return Object.assign({}, state, {categories: state.categories});
         case 'UPDATE_CATEGORY_INPUT':
             return Object.assign({}, state, {categoryInput: action.input});
+        case 'ADD_TASK':
+            if (state.tasks.some((e) => (e.task === action.task && e.category === action.category))) {
+                return state;
+            } else {
+                return Object.assign({}, state, {tasks: state.tasks.concat({task: action.task, category: action.category})});
+            }
         default:
             return state;
     }
