@@ -7,7 +7,7 @@ let TaskTracker = (props) => {
     <div>
         <div>
             <input type="text" onChange={(e) => {props.updateCategoryInput(e.target.value)}}></input>
-            <button onClick={() => props.addCategory(props.categoryInput)}>Add Category</button>
+            <button onClick={() => {if (props.categoryInput !== '') {props.addCategory(props.categoryInput)}}}>Add Category</button>
         </div>
         <div style={{display: 'inline-flex', flexDirection: 'row'}}>
             {props.categories.map(category => (<Category name={category} />))}
