@@ -1,8 +1,12 @@
 const TaskTrackerReducers = (state={categories: [], tasks: [], categoryInput: ''}, action) => {
     switch (action.type) {
         case 'ADD_CATEGORY':
-            console.log('hit');
-            return Object.assign({}, state, {categories: state.categories.concat(action.category)});
+            console.log(state.categories, action.category)
+            if (state.categories.indexOf(action.category.toString().toUpperCase()) === -1) {
+                return Object.assign({}, state, {categories: state.categories.concat(action.category.toString().toUpperCase())});
+            } else {
+                return state;
+            }
         case 'REMOVE_CATEGORY':
             state.categories.splice(state.categories.indexOf(category), 1);
             return Object.assign({}, state, {categories: state.categories});
