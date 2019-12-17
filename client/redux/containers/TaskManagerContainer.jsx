@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {addCategory, updateCategoryInput, removeCategory} from './../actions/TaskTrackerActions.jsx';
+import {addCategory, updateCategoryInput, removeCategory, moveCategoryLeft, moveCategoryRight} from './../actions/TaskTrackerActions.jsx';
 import TaskTracker from './../../components/TaskTracker.jsx';
 
 let mapStateToProps = (state) => ({
@@ -13,6 +13,12 @@ let mapStateToDispatch = (dispatch) => ({
     },
     updateCategoryInput: (input) => {
         dispatch(updateCategoryInput(input));
+    },
+    moveCategoryLeft: (input) => {
+        dispatch(moveCategoryLeft(input));
+    },
+    moveCategoryRight: (input) => {
+        dispatch(moveCategoryRight(input));
     }
 });
 
